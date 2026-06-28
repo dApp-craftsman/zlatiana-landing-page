@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<!--
+  ===========================================================================
+  ЦЕЛЕВА СТРАНИЦА ЗА УЕЛНЕС / АЮРВЕДА — ръководство за персонализиране
+  ===========================================================================
+  Намери и замени тези плейсхолдъри с реална информация:
+    [ИМЕ]               -> нейното име (в момента "Лийла")
+    [МОТО]              -> подзаглавие в началото (hero)
+    [БИОГРАФИЯ]         -> текст за нея
+    [ЗАГЛАВИЕ НА Е-КНИГА] -> заглавие на е-книгата
+    [ОПИСАНИЕ НА Е-КНИГАТА] -> описание на е-книгата
+    [ФОРМА ЗА ИМЕЙЛ]    -> свържи с Mailchimp / ConvertKit / Beehiiv и т.н.
+    [INSTAGRAM] / [YOUTUBE] / [EMAIL] -> връзки към социални мрежи и контакт
+    Снимки: замени <div class="img-placeholder"> блоковете
+            с реални <img src="..."> тагове (снимки, корица на е-книгата)
+  ===========================================================================
+-->
+<html lang="bg">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AyurMama — Аюрведа, движение и женско здраве</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Caveat:wght@500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f1e6;
+    --cream-dark: #efe4d2;
+    --terracotta: #c97c5d;
+    --terracotta-dark: #b3654a;
+    --sage: #8a9a6b;
+    --sage-dark: #6f7e54;
+    --brown: #5c4632;
+    --gold: #d8a86a;
+    --ink: #4a3c2f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.2;
+  }
+
+  .script {
+    font-family: 'Caveat', cursive;
+    color: var(--terracotta);
+  }
+
+  a { text-decoration: none; }
+
+  img { max-width: 100%; display: block; }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Декоративни форми ---------- */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.35;
+    filter: blur(2px);
+    z-index: 0;
+  }
+
+  /* ---------- Навигация ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247, 241, 230, 0.9);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--brown);
+    letter-spacing: 1px;
+  }
+
+  .logo span { color: var(--terracotta); }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--ink);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: #fff !important;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .nav-cta:hover { background: var(--terracotta-dark); }
+
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 90px 0 110px;
+    overflow: hidden;
+  }
+
+  .hero .blob.b1 {
+    width: 380px; height: 380px;
+    background: var(--sage);
+    top: -120px; right: -100px;
+  }
+
+  .hero .blob.b2 {
+    width: 260px; height: 260px;
+    background: var(--gold);
+    bottom: -80px; left: -80px;
+    opacity: 0.25;
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .hero-grid .img-placeholder { margin: 0 auto; }
+  }
+
+  .eyebrow {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--sage-dark);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 3.4rem;
+    margin-bottom: 18px;
+  }
+
+  .hero p.lead {
+    font-size: 1.15rem;
+    max-width: 460px;
+    margin-bottom: 32px;
+    color: var(--ink);
+  }
+
+  @media (max-width: 860px) {
+    .hero p.lead { margin-left: auto; margin-right: auto; }
+    .hero h1 { font-size: 2.6rem; }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 15px 34px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.25s ease;
+    border: 2px solid transparent;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: #fff;
+  }
+
+  .btn-primary:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    border-color: var(--sage);
+    color: var(--sage-dark);
+    margin-left: 14px;
+  }
+
+  .btn-outline:hover {
+    background: var(--sage);
+    color: #fff;
+  }
+
+  /* ---------- Placeholder-и за снимки ---------- */
+  .img-placeholder {
+    background: linear-gradient(135deg, var(--cream-dark), var(--gold) 140%);
+    border-radius: 50% 48% 52% 50% / 55% 50% 50% 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brown);
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    text-align: center;
+    border: 3px dashed rgba(92,70,50,0.25);
+  }
+
+  .hero .img-placeholder {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    margin-left: auto;
+  }
+
+  /* Hero ebook cover */
+  .hero .hero-cover {
+    max-width: 320px;
+    aspect-ratio: 3 / 4;
+    border-radius: 6px 26px 6px 26px;
+    transform: rotate(-4deg);
+    box-shadow: 0 20px 50px rgba(92,70,50,0.18);
+    padding: 24px;
+    line-height: 1.5;
+  }
+
+  .hero-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0 6px;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .hero-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--gold);
+    flex-shrink: 0;
+  }
+
+  /* Real photos override the dashed placeholder look */
+  .img-photo {
+    object-fit: cover;
+    object-position: center;
+    border: none;
+    background: var(--cream-dark);
+  }
+
+  /* ---------- Общи стилове за секции ---------- */
+  section { padding: 90px 0; position: relative; }
+
+  .section-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+  }
+
+  .section-head .eyebrow { text-align: center; }
+
+  .section-head h2 {
+    font-size: 2.6rem;
+    margin-bottom: 14px;
+  }
+
+  .section-head p {
+    color: #6b5c4c;
+    font-size: 1.05rem;
+  }
+
+  /* ---------- За мен ---------- */
+  .about {
+    background: var(--cream-dark);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; text-align: center; }
+    .about-grid .img-placeholder { margin: 0 auto; }
+  }
+
+  .about .img-placeholder {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 4 / 5;
+    border-radius: 48% 52% 50% 50% / 50% 48% 52% 50%;
+  }
+
+  .about h2 { font-size: 2.4rem; margin-bottom: 20px; }
+
+  .about p { margin-bottom: 16px; color: #5c4a3d; }
+
+  .signature {
+    font-family: 'Caveat', cursive;
+    font-size: 2rem;
+    color: var(--terracotta);
+    margin-top: 18px;
+  }
+
+  /* ---------- Аюрведа ---------- */
+  .ayurveda { background: var(--cream); }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 760px) {
+    .pillars { grid-template-columns: 1fr; }
+  }
+
+  .pillar {
+    background: #fff;
+    border-radius: 24px;
+    padding: 36px 28px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(92,70,50,0.06);
+    border: 1px solid var(--cream-dark);
+    transition: transform 0.25s ease;
+  }
+
+  .pillar:hover { transform: translateY(-6px); }
+
+  .pillar-icon {
+    width: 64px; height: 64px;
+    border-radius: 50%;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+
+  .pillar:nth-child(1) .pillar-icon { background: var(--terracotta); }
+  .pillar:nth-child(2) .pillar-icon { background: var(--sage); }
+  .pillar:nth-child(3) .pillar-icon { background: var(--gold); }
+
+  .pillar h3 { font-size: 1.4rem; margin-bottom: 10px; }
+
+  .pillar p { font-size: 0.95rem; color: #6b5c4c; }
+
+  .ayurveda-note {
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--brown);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---------- Е-книга / Лийд магнит ---------- */
+  .ebook {
+    background: linear-gradient(135deg, var(--sage) 0%, var(--sage-dark) 100%);
+    color: #fff;
+    border-radius: 36px;
+    margin: 0 24px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .ebook .container { max-width: 1100px; padding: 0; }
+
+  .ebook-inner {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
+    align-items: center;
+    padding: 70px 50px;
+  }
+
+  @media (max-width: 860px) {
+    .ebook-inner { grid-template-columns: 1fr; text-align: center; padding: 50px 28px; }
+    .ebook .img-placeholder { margin: 0 auto; }
+  }
+
+  .ebook .img-placeholder {
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(135deg, #fff, var(--cream-dark) 140%);
+    border-radius: 6px 26px 6px 26px;
+    color: var(--brown);
+    border: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    transform: rotate(-4deg);
+  }
+
+  .ebook .eyebrow { color: var(--cream); }
+
+  .ebook h2 {
+    color: #fff;
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+  }
+
+  .ebook p { color: #f1ece1; margin-bottom: 24px; }
+
+  .ebook ul {
+    list-style: none;
+    margin-bottom: 28px;
+  }
+
+  .ebook ul li {
+    padding-left: 28px;
+    position: relative;
+    margin-bottom: 10px;
+    color: #f8f4ec;
+  }
+
+  .ebook ul li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+
+  /* ---------- Бъдещи продукти ---------- */
+  .future {
+    text-align: center;
+  }
+
+  .future-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 760px) {
+    .future-grid { grid-template-columns: 1fr; }
+  }
+
+  .future-card {
+    background: var(--cream-dark);
+    border-radius: 20px;
+    padding: 30px 24px;
+    border: 1px dashed var(--gold);
+  }
+
+  .future-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: var(--terracotta-dark);
+  }
+
+  .future-card p { font-size: 0.9rem; color: #6b5c4c; }
+
+  .future-card .tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-family: 'Caveat', cursive;
+    font-size: 1.1rem;
+    color: var(--sage-dark);
+  }
+
+  /* ---------- Футър ---------- */
+  footer {
+    background: var(--brown);
+    color: var(--cream);
+    padding: 60px 0 30px;
+    text-align: center;
+  }
+
+  footer h3 {
+    color: #fff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  footer p { color: #d8c9b8; margin-bottom: 24px; }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .social-links a {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+  }
+
+  .social-links a:hover {
+    background: var(--gold);
+    color: var(--brown);
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 22px;
+    font-size: 0.85rem;
+    color: #b8a896;
+  }
+
+  /* ================= Animation & motion ================= */
+  @keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(10px); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(201,124,93,0.45); }
+    50% { box-shadow: 0 0 0 12px rgba(201,124,93,0); }
+  }
+
+  .blob { animation: float 12s ease-in-out infinite; }
+  .hero .blob.b2 { animation-duration: 16s; animation-delay: -5s; }
+
+  /* Hero entrance */
+  .hero-grid > div:first-child > * {
+    opacity: 0;
+    animation: fadeInUp 0.9s ease forwards;
+  }
+  .hero-grid > div:first-child > *:nth-child(1) { animation-delay: 0.05s; }
+  .hero-grid > div:first-child > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-grid > div:first-child > *:nth-child(3) { animation-delay: 0.35s; }
+  .hero-grid > div:first-child > *:nth-child(4) { animation-delay: 0.5s; }
+  .hero-grid > div:first-child > *:nth-child(5) { animation-delay: 0.5s; }
+  .hero .img-placeholder {
+    opacity: 0;
+    animation: fadeInUp 1s ease 0.3s forwards;
+  }
+
+  /* Hover life */
+  .about .img-placeholder,
+  .ebook .img-placeholder {
+    transition: transform 0.4s ease;
+  }
+  .about .img-placeholder:hover { transform: scale(1.03) rotate(1deg); }
+  .ebook .img-placeholder:hover { transform: rotate(0deg) scale(1.04); }
+
+  .pillar-icon { transition: transform 0.4s ease; }
+  .pillar:hover .pillar-icon { transform: scale(1.12) rotate(8deg); }
+
+  .nav-links a {
+    position: relative;
+    padding-bottom: 2px;
+  }
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: -4px;
+    width: 0; height: 2px;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+  }
+  .nav-links a:hover::after { width: 100%; }
+
+  .future-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .future-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(92,70,50,0.1);
+    border-color: var(--terracotta);
+  }
+
+  .btn, .nav-cta {
+    transition: all 0.25s ease, transform 0.15s ease;
+  }
+  .btn:active, .nav-cta:active { transform: scale(0.96); }
+
+  /* Scroll reveal */
+  .section-head,
+  .about-grid,
+  .ebook,
+  .ayurveda-note,
+  .pillars .pillar,
+  .future-grid .future-card,
+  footer .container {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .section-head.visible,
+  .about-grid.visible,
+  .ebook.visible,
+  .ayurveda-note.visible,
+  .pillars .pillar.visible,
+  .future-grid .future-card.visible,
+  footer .container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .pillars .pillar:nth-child(2),
+  .future-grid .future-card:nth-child(2) { transition-delay: 0.12s; }
+  .pillars .pillar:nth-child(3),
+  .future-grid .future-card:nth-child(3) { transition-delay: 0.24s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .section-head, .about-grid, .ebook, .ayurveda-note,
+    .pillars .pillar, .future-grid .future-card, footer .container {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+  /* ---- Scroll progress bar ---- */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--terracotta), var(--gold));
+    z-index: 9999;
+    transition: width 0.08s linear;
+    pointer-events: none;
+  }
+
+  /* ---- Events & workshops ---- */
+  .events { background: var(--cream-dark); }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 40px;
+  }
+
+  .event-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 26px 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    border: 1px solid rgba(201,124,93,0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .event-card:hover {
+    box-shadow: 0 10px 28px rgba(92,70,50,0.1);
+    transform: translateY(-3px);
+  }
+
+  .event-date {
+    min-width: 68px;
+    text-align: center;
+    background: var(--terracotta);
+    color: #fff;
+    border-radius: 14px;
+    padding: 14px 10px;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.2;
+    flex-shrink: 0;
+  }
+  .event-date .day   { font-size: 2rem; font-weight: 600; display: block; }
+  .event-date .month { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  .event-info { flex: 1; }
+  .event-info h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    color: var(--brown);
+    margin-bottom: 5px;
+  }
+  .event-info p { font-size: 0.9rem; color: #6b5c4c; margin-bottom: 0; }
+
+  .event-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 11px;
+    border-radius: 20px;
+    background: rgba(201,124,93,0.12);
+    color: var(--terracotta);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+  }
+
+  .event-cta { flex-shrink: 0; }
+
+  .events-empty {
+    text-align: center;
+    padding: 52px 0;
+    color: #8a7a6a;
+    font-style: italic;
+    font-size: 1rem;
+  }
+
+  /* scroll-reveal for event cards */
+  .event-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease,
+                box-shadow 0.3s ease;
+  }
+  .event-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .event-card:nth-child(2) { transition-delay: 0.1s; }
+  .event-card:nth-child(3) { transition-delay: 0.2s; }
+
+  @media (max-width: 680px) {
+    .event-card { flex-direction: column; align-items: flex-start; gap: 14px; padding: 20px 18px; }
+    .event-cta .btn { display: block; text-align: center; }
+  }
+
+  /* ---- GDPR cookie banner ---- */
+  #cookie-banner {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--brown);
+    color: #e8ddd0;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    z-index: 9000;
+    font-size: 0.87rem;
+    box-shadow: 0 -4px 24px rgba(0,0,0,0.18);
+    transition: transform 0.4s ease;
+  }
+  #cookie-banner.hidden { transform: translateY(110%); }
+  #cookie-banner p { margin: 0; flex: 1; min-width: 200px; line-height: 1.55; }
+  #cookie-banner a { color: var(--gold); text-underline-offset: 3px; }
+
+  .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+  .cookie-btns button {
+    padding: 9px 22px;
+    border-radius: 30px;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+  }
+  .cookie-btns button:hover { opacity: 0.82; }
+  #btn-accept  { background: var(--terracotta); color: #fff; }
+  #btn-decline { background: transparent; color: #e8ddd0; border: 1px solid rgba(232,221,208,0.35) !important; }
+
+  @media (max-width: 520px) {
+    #cookie-banner { padding: 14px 18px; }
+    .cookie-btns { width: 100%; }
+    .cookie-btns button { flex: 1; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo"><img src="images/AyurMama-logo-transparent.png" alt="AyurMama" style="height:150px;width:auto;display:block;" /></div>
+    <ul class="nav-links">
+      <li><a href="#about">За мен</a></li>
+      <li><a href="#ayurveda">Аюрведа</a></li>
+      <li><a href="#ebook">Е-книга</a></li>
+    </ul>
+    <a href="#ebook" class="nav-cta">Изтегли е-книгата</a>
+  </nav>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Аюрведа · Движение · Женско здраве</span>
+      <h1>Свържи се отново с тялото си</h1>
+      <p class="lead">
+        Здравей, аз съм Златиана Тодорова. С над 10 години опит в
+        движението, здравословните навици и грижата за женското тяло,
+        ти помагам да се почувстваш силна, спокойна и свързана със себе си
+        — чрез Аюрведа, осъзнато движение и индивидуален подход към
+        храненето.
+      </p>
+      <a href="#ebook" class="btn btn-primary">Вземи е-книгата</a>
+    </div>
+    <img class="img-placeholder img-photo" src="images/zlatiana-hero.jpg" alt="Златиана Тодорова" />
+  </div>
+</section>
+
+<!-- ===================== ЗА МЕН ===================== -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <img class="img-placeholder img-photo" src="images/zlatiana1.jpg" alt="Портрет на Златиана Тодорова" />
+    <div>
+      <span class="eyebrow">Малко за мен</span>
+      <h2>Здравей, аз съм Златиана Тодорова</h2>
+      <p>
+        Повече от 10 години работя в сферата на движението, здравословните
+        навици и грижата за женското тяло.
+      </p>
+      <p>
+        Завършила съм бакалавърска степен по „Физическо възпитание и спорт“
+        в Софийски университет „Св. Климент Охридски“, а от 2014 г. съм
+        лицензиран фитнес инструктор към Националната спортна академия. През
+        годините съм водила индивидуални и групови тренировки, консултирала
+        съм хранителни навици и съм работила в сферата на козметичните
+        процедури и грижата за тялото.
+      </p>
+      <p>
+        През 2023 г. станах майка. Именно майчинството ме насочи към
+        по-цялостен и осъзнат подход към здравето и ме срещна с Аюрведа. В
+        момента се обучавам в двугодишна програма към Аюрведичен център –
+        София, като успешно завърших първата теоретична част и предстои
+        практическото ми обучение.
+      </p>
+      <p>
+        Вярвам, че всяка жена заслужава да се чувства силна, спокойна и
+        свързана със своето тяло. Затова съчетавам принципите на Аюрведа,
+        движението и индивидуалния подход към храненето, за да подкрепям
+        жените по естествен и устойчив начин.
+      </p>
+      <div class="signature">Златиана</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== КАКВО Е АЮРВЕДА ===================== -->
+<section class="ayurveda" id="ayurveda">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Мъдростта зад всичко</span>
+      <h2>Какво е Аюрведа?</h2>
+      <p>
+        Аюрведа е 5000-годишна система за естествено лечение от Индия.
+        Името идва от санскритските думи „аюр" (живот) и „веда" (знание или
+        наука) — буквално, наука за живота. Вместо да лекува симптоми,
+        Аюрведа разглежда теб като цяло — тяло, ум и дух — и ти помага да
+        живееш в синхрон с природата.
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">☯</div>
+        <h3>Твоята уникална конституция</h3>
+        <p>
+          Аюрведа учи, че всеки човек има уникален тип тяло и ум (доша) —
+          Вата, Пита или Капха — и че истинското здраве идва от разбирането
+          и балансирането на собствената ти природа, а не от следването на
+          универсален план, подходящ за всички.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌿</div>
+        <h3>Храната като лекарство</h3>
+        <p>
+          Това какво, как и кога ядеш има значение точно толкова, колкото и
+          какво ядеш. Аюрведа предлага прости, сезонни и подхранващи
+          принципи на хранене, които подпомагат храносмилането, енергията и
+          емоционалния баланс.
+        </p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🌙</div>
+        <h3>Дневни ритми и движение</h3>
+        <p>
+          Нежните ежедневни ритуали — от това как движим телата си до това
+          как се успокояваме вечер — помагат да регулираме нервната си
+          система и естествено и трайно да възстановим баланса си.
+        </p>
+      </div>
+    </div>
+
+    <p class="ayurveda-note">
+      „Не е нужно да преобръщаш живота си за една нощ. Малки, постоянни
+      ритуали, вкоренени в древната мъдрост, могат напълно да преобразят
+      начина, по който се чувстваш — в тялото, енергията и ума ти."
+    </p>
+  </div>
+</section>
+
+<!-- ===================== Е-КНИГА / ЛИЙД МАГНИТ ===================== -->
+<section id="ebook">
+  <div class="container">
+    <div class="ebook">
+      <div class="ebook-inner">
+        <img class="img-placeholder img-photo" src="images/ebook-cover.jpg" alt="Лесни рецепти за подкрепа при детско неразположение" />
+        <div>
+          <span class="eyebrow">Вземи е-книгата</span>
+          <h2>Лесни рецепти за подкрепа при детско неразположение</h2>
+          <p>
+            Малка кухня за трудни моменти — 5 лесни, вдъхновени от Аюрведа
+            рецепти за деца от 1 до 3 години по време на неразположение.
+            Подходящи хранителни продукти, прости правила и рецепти, които
+            реално помагат.
+          </p>
+          <ul>
+            <li>Крем супа от просо и морков, оризова крем супа</li>
+            <li>Топла каша с ориз, рьощи и домашни бисквитки</li>
+            <li>Аюрведичен поглед — за кого е подходяща всяка рецепта</li>
+          </ul>
+
+          <a href="Лесни рецепти - Златиана Тодорова.pdf" download class="btn">
+            Изтегли е-книгата — [ЦЕНА]
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== БЪДЕЩИ ПРОДУКТИ ===================== -->
+<section class="future">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Очаквайте скоро</span>
+      <h2>Какво предстои</h2>
+      <p>
+        Е-книгата е само началото. Ето какво подготвям за теб
+        следващо.
+      </p>
+    </div>
+    <div class="future-grid">
+      <div class="future-card">
+        <h4>Програми за движение</h4>
+        <p>Нежни, бодипозитивни серии от упражнения, съобразени с твоя цикъл и нивата на енергия.</p>
+        <span class="tag">очаквайте скоро</span>
+      </div>
+      <div class="future-card">
+        <h4>Аюрведичен наръчник за рестарт</h4>
+        <p>Воден сезонен рестарт, който ще ти помогне да пренаредиш рутината, храносмилането и съня си.</p>
+        <span class="tag">очаквайте скоро</span>
+      </div>
+      <div class="future-card">
+        <h4>Индивидуален уелнес коучинг</h4>
+        <p>Персонализирани аюрведични насоки, съобразени с твоята уникална конституция и цели.</p>
+        <span class="tag">очаквайте скоро</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ФУТЪР ===================== -->
+<footer>
+  <div class="container">
+    <h3>AyurMama</h3>
+    <p>Аюрведа · Движение · Женско здраве</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/zlatiana.todorova/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+      <a href="https://www.facebook.com/profile.php?id=61583898122486" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+      <a href="mailto:[EMAIL]" aria-label="Имейл">✉</a>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 AyurMama. Всички права запазени.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const revealTargets = document.querySelectorAll(
+    '.section-head, .about-grid, .ebook, .ayurveda-note, .pillars .pillar, .future-grid .future-card, footer .container'
+  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealTargets.forEach((el) => observer.observe(el));
+</script>
+</body>
+</html>
