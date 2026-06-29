@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Благодаря ти! — AyurMama</title>
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Caveat:wght@500;600&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f7f1e6;
+    --cream-dark: #efe4d2;
+    --terracotta: #c97c5d;
+    --terracotta-dark: #b3654a;
+    --sage: #8a9a6b;
+    --brown: #5c4632;
+    --gold: #d8a86a;
+    --ink: #4a3c2f;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--brown);
+    line-height: 1.2;
+  }
+
+  a { text-decoration: none; }
+
+  header {
+    background: rgba(247,241,230,0.95);
+    border-bottom: 1px solid var(--cream-dark);
+    padding: 16px 24px;
+    text-align: center;
+  }
+  header img { height: 80px; width: auto; margin: 0 auto; }
+
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 20px 60px rgba(92,70,50,0.1);
+    padding: 60px 50px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 40px 24px; border-radius: 24px; }
+  }
+
+  .checkmark {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, var(--sage), #6f7e54);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+    font-size: 2rem;
+  }
+
+  .card h1 {
+    font-size: 2.4rem;
+    margin-bottom: 14px;
+  }
+
+  @media (max-width: 480px) { .card h1 { font-size: 1.9rem; } }
+
+  .card .subtitle {
+    font-family: 'Caveat', cursive;
+    font-size: 1.3rem;
+    color: var(--sage);
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .card p {
+    color: #6b5c4c;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--terracotta);
+    color: #fff;
+    padding: 18px 40px;
+    border-radius: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.25s ease;
+    margin-bottom: 28px;
+  }
+
+  .download-btn:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(201,124,93,0.35);
+  }
+
+  .download-btn svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .note {
+    background: var(--cream);
+    border-radius: 16px;
+    padding: 18px 22px;
+    font-size: 0.9rem;
+    color: #7a6a5a;
+    margin-bottom: 28px;
+    line-height: 1.6;
+  }
+
+  .note strong { color: var(--brown); }
+
+  .divider {
+    border: none;
+    border-top: 1px solid var(--cream-dark);
+    margin: 28px 0;
+  }
+
+  .signature-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .signature-block img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+  }
+
+  .signature-block .sig-text {
+    text-align: left;
+  }
+
+  .signature-block .sig-name {
+    font-family: 'Caveat', cursive;
+    font-size: 1.4rem;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .signature-block .sig-role {
+    font-size: 0.82rem;
+    color: #8a7a6a;
+    margin-top: 2px;
+  }
+
+  .social-row {
+    margin-top: 24px;
+    font-size: 0.88rem;
+    color: #8a7a6a;
+  }
+
+  .social-row a {
+    color: var(--terracotta);
+    font-weight: 600;
+  }
+
+  footer {
+    background: var(--brown);
+    color: #b8a896;
+    text-align: center;
+    padding: 20px 24px;
+    font-size: 0.82rem;
+  }
+  footer a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/"><img src="images/AyurMama-logo-transparent.png" alt="AyurMama" /></a>
+</header>
+
+<main>
+  <div class="card">
+
+    <div class="checkmark">✓</div>
+
+    <span class="subtitle">Покупката е успешна!</span>
+    <h1>Благодаря ти ♡</h1>
+
+    <p>
+      Радвам се, че тази малка книга ще бъде до теб в трудните моменти.
+      Надявам се рецептите да помогнат на малкото ти да се почувства
+      по-добре бързо.
+    </p>
+
+    <a
+      href="Лесни рецепти - Златиана Тодорова.pdf"
+      download
+      class="download-btn"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+      </svg>
+      Изтегли книгата (PDF)
+    </a>
+
+    <div class="note">
+      <strong>Запази файла</strong> на телефона или компютъра си —
+      линкът за сваляне е достъпен само от тази страница.
+      При проблем пиши на
+      <a href="mailto:zllatiana.ayurmama@gmail.com" style="color:var(--terracotta);">zllatiana.ayurmama@gmail.com</a>
+    </div>
+
+    <hr class="divider" />
+
+    <div class="signature-block">
+      <img src="images/zlatiana1.jpg" alt="Златиана Тодорова" />
+      <div class="sig-text">
+        <div class="sig-name">Златиана</div>
+        <div class="sig-role">AyurMama · Аюрведа & Женско Здраве</div>
+      </div>
+    </div>
+
+    <div class="social-row">
+      Следвай ме в Instagram →
+      <a href="https://www.instagram.com/zlatiana.todorova/" target="_blank" rel="noopener">@zlatiana.todorova</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 AyurMama &nbsp;·&nbsp;
+  <a href="/privacy.html">Политика за поверителност</a> &nbsp;·&nbsp;
+  <a href="/terms.html">Общи условия</a>
+</footer>
+
+</body>
+</html>
